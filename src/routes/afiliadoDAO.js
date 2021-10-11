@@ -5,7 +5,7 @@ const router = express.Router();
 const conexionBD = require('../database/bd');
 let persona = require('./afiliado');
 let p, objCita;
-
+let citas ;
 
 
 router.post('/afiliadoSesion.html', async(req, res) =>{
@@ -66,12 +66,14 @@ router.get('/afiliadoSesion.html', async(req, res)=>{
     })
 })
 
+
+
 router.get('/afiliadoCitas.html', async(req, res)=>{
     //console.log(p);
     const respuesta = await conexionBD.query('SELECT c.f_horainicio, m.n_nombre, m.n_apellido, s.n_direccion, c.n_especialidad, c.k_idCita from sede s , medico m ,tipocita t, cita c, consultorio con, especialidadmedico em, agenda a, tipocitaagenda tpc WHERE con.k_codigosede = s.k_codigosede AND con.k_numerodocumento = m.k_numerodocumento AND a.k_numerodocumento = m.k_numerodocumento AND a.k_tipodocumento = m.k_tipodocumento AND em.k_especialidadmedico = c.n_especialidad AND em.k_numerodocumento = m.k_numerodocumento AND a.k_numerodocumento = tpc.k_numerodocumento AND a.k_mes = tpc.k_mes AND a.k_numeroagenda = tpc.k_numeroagenda AND tpc.k_idtipocita = t.k_idtipocita AND t.k_idtipocita = c.k_idtipocita');
-        let c = respuesta.rows;
+        citas = respuesta.rows;
         res.render('afiliadoCitas.html', {
-            datos : c,
+            datos : citas,
             nombreAfiliado: p.nombre.toUpperCase()+" "+p.apellido.toUpperCase(),
         })
 })
@@ -81,44 +83,48 @@ router.post('/afiliadoCitas.html', async(req, res)=>{
     const especialidad = req.body.especialidad;
     if (tipoCita && especialidad) {
         const respuesta = await conexionBD.query('SELECT c.f_horainicio, m.n_nombre, m.n_apellido, s.n_direccion, c.n_especialidad, c.k_idCita from sede s , medico m ,tipocita t, cita c, consultorio con, especialidadmedico em, agenda a, tipocitaagenda tpc WHERE con.k_codigosede = s.k_codigosede AND con.k_numerodocumento = m.k_numerodocumento AND a.k_numerodocumento = m.k_numerodocumento AND a.k_tipodocumento = m.k_tipodocumento AND em.k_especialidadmedico = c.n_especialidad AND em.k_numerodocumento = m.k_numerodocumento AND a.k_numerodocumento = tpc.k_numerodocumento AND a.k_mes = tpc.k_mes AND a.k_numeroagenda = tpc.k_numeroagenda AND tpc.k_idtipocita = t.k_idtipocita AND t.k_idtipocita = c.k_idtipocita AND c.n_especialidad = $1 AND t.n_nombrecita = $2', [especialidad, tipoCita]);
-        let c = respuesta.rows;
-        if (c.length>0) {
+        let citasFiltradas = respuesta.rows;
+        if (citasFiltradas.length>0) {
             res.render('afiliadoCitas.html', {
-                datos : c,
+                datos : citasFiltradas,
                 nombreAfiliado: p.nombre.toUpperCase()+" "+p.apellido.toUpperCase(),
             })
         }else{
-            const respuesta = await conexionBD.query('SELECT c.f_horainicio, m.n_nombre, m.n_apellido, s.n_direccion, c.n_especialidad, c.k_idCita from sede s , medico m ,tipocita t, cita c, consultorio con, especialidadmedico em, agenda a, tipocitaagenda tpc WHERE con.k_codigosede = s.k_codigosede AND con.k_numerodocumento = m.k_numerodocumento AND a.k_numerodocumento = m.k_numerodocumento AND a.k_tipodocumento = m.k_tipodocumento AND em.k_especialidadmedico = c.n_especialidad AND em.k_numerodocumento = m.k_numerodocumento AND a.k_numerodocumento = tpc.k_numerodocumento AND a.k_mes = tpc.k_mes AND a.k_numeroagenda = tpc.k_numeroagenda AND tpc.k_idtipocita = t.k_idtipocita AND t.k_idtipocita = c.k_idtipocita');
-            let c = respuesta.rows;
             //console.log(c);
             res.render('afiliadoCitas.html', {
-                datos: c,
+                datos: citas,
                 nombreAfiliado: p.nombre.toUpperCase()+" "+p.apellido.toUpperCase(),
             })
         }
     }
 })
 
-router.get('/afiliadoCitas.html/:e/:id', async(req, res)=>{
-    
-    //console.log(p.numDocumento);
-    const especialidad = req.params.e
-    const numcita = req.params.id
-    console.log(numcita, especialidad);
-    if (especialidad) {
-        const ver = await conexionBD.query('SELECT * FROM cita c, diagnostico d, afiliado a WHERE c.k_idcita = d.k_idcita AND d.k_numerodocumentoafiliado = a.k_numerodocumentoafiliado AND c.n_especialidad = $1', [especialidad]);
-        if (ver.rowCount === 0) {
-            const respuesta1 = await conexionBD.query('INSERT INTO diagnostico (n_prescripcion, k_idcita, k_numerodocumentoafiliado, k_tipodocumentoafiliado) VALUES ($1, $2, $3, $4)', [" ", numcita, p.numDocumento, p.tipoDocumento]);
-            console.log("HOLA");
-            res.render('afiliadoCitas.html')
-        }else{
-            res.render('afiliadoSesion.html')
-        }
-        //
-    }else{
-        console.log("HOLA 2");
-    }
+router.get('/afiliadoConsultaCitas.html', async(req, res)=>{
+    res.render('afiliadoConsultaCitas.html', {
+        nombreAfiliado: p.nombre.toUpperCase()+" "+p.apellido.toUpperCase()
+    });
 })
+
+// router.get('/afiliadoCitas.html/:e/:id', async(req, res)=>{
+    
+//     //console.log(p.numDocumento);
+//     const especialidad = req.params.e
+//     const numcita = req.params.id
+//     console.log(numcita, especialidad);
+//     if (especialidad) {
+//         const ver = await conexionBD.query('SELECT * FROM cita c, diagnostico d, afiliado a WHERE c.k_idcita = d.k_idcita AND d.k_numerodocumentoafiliado = a.k_numerodocumentoafiliado AND c.n_especialidad = $1', [especialidad]);
+//         if (ver.rowCount === 0) {
+//             const respuesta1 = await conexionBD.query('INSERT INTO diagnostico (n_prescripcion, k_idcita, k_numerodocumentoafiliado, k_tipodocumentoafiliado) VALUES ($1, $2, $3, $4)', [" ", numcita, p.numDocumento, p.tipoDocumento]);
+//             console.log("HOLA");
+//             res.render('afiliadoCitas.html')
+//         }else{
+//             res.render('afiliadoSesion.html')
+//         }
+//         //
+//     }else{
+//         console.log("HOLA 2");
+//     }
+// })
 
 module.exports = router;
 
