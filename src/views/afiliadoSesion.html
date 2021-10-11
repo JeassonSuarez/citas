@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/normalize.css">
+    <link rel="stylesheet" href="/CSS/afiliadoEstiloSesion.css">
+    <title>Sesion afiliado</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><b><%= (typeof nombre != "undefined" ? nombre : "") %></b></li>
+                <li><a href="afiliadoInfo.html"><b>INFORMACION AFILIADO</b></a></li>
+                <li><a href="index.html"><b>CERRAR SESION</b></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="section__container">
+        <a href="afiliadoCitas.html"><div class="section__div">
+            <figure>
+                <img src="/Imagenes/cita.png" alt="Solicitar cita">
+            </figure>
+            <p class="data" >Solicitar una cita</p>
+        </div></a>
+        <a href="afiliadoConsultaCitas.html"><div class="section__div">
+            <figure>
+                <img src="/Imagenes/agenda.png" alt="Consultar cita">
+            </figure>
+            <p class="div__p-text data">Consultar citas</p>
+        </div></a>
+    </section>
+    <footer>
+        EPS
+    </footer>
+    <!-- <script src="../JavaScript/logicaAfiliadoInfo.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/afiliadoEstilo.css">
+    <title>Datos personales</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li ><a href="medicoSesion.html"><b id="nombreMedico">Nombre médico</b></a></li>
+                <li><a href="medicoSesion.html"><b>TERMINAR CITA</b></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="section__container">
+        <div class="div__datos-EPS div__container">
+            <p id="nombreEPS">COMPENSAR EPS</p>
+            <p>Contrato </p>
+            <p>Contrato Subsidio</p>
+            <p>Numero de Autorizacion: 0702106257140</p>
+            <p>PS Prestadora del Servicio:</p>
+            <p>VIVA 1A IPS VENECIA</p>
+            <p>Ciudad </p>
+            <p>BOGOTÁ, D.C.</p>
+            <p>Origen del Servicio</p>
+            <p></p>
+            <p>Direccion IPS</p>
+            <p>CALLE 44 BIS A SUR # 68 B 24</p>
+            <p>Telefono</p>
+            <p>4441234</p>
+            <p>F. Expedicion</p>
+            <p>11/06/2021 - 13:35</p>
+        </div>
+        <div class="div__datos-afiliado div__container">
+            <p>Nombre del paciente</p>
+            <p>JEASSON SUAREZ</p>
+            <p>Identificacion</p>
+            <p>cc 1013680879</p>
+            <p>telefono</p>
+            <p>3013840229</p>
+            <p>Tipo de afiliado</p>
+            <p>Cotizante</p>
+            <p>Cuota mod y/o Copago</p>
+            <p>0</p>
+            <p>Edad</p>
+            <p>23</p>
+            <p>Regimen</p>
+            <p>Subsidiado</p>
+            <p>Dx</p>
+            <p>Zooo</p>
+            <p>Finalidad</p>
+            <p>nn</p>
+        </div>
+        <div class="div__datos-medico div__container">
+            <p>Medico Ordenador</p>
+            <p>JOSE VILLANUEVA</p>
+            <p>Registro Medico</p>
+            <p>1013669521</p>
+            <p>Especialidad</p>
+            <p>ninguna</p>
+            <p>Prestador asignado</p>
+            <p>VIVA 1A IPS VENECIA</p>
+            <p>Direccion</p>
+            <p>CALLE 44 BIS A SUR #68B 24</p>
+            <p>Telefono</p>
+            <p>4441234</p>
+            
+        </div>
+        <div class="div__prescripcion">
+            <p>Descripcion</p>
+            <p>Presentacion</p>
+            <p>Cantidad</p>
+            <p>Dias de tratamiento</p>
+            <p>Posologia</p>
+        </div>
+        <div class="div__presTratamiento">
+            <label for="Aniadir"></label>
+            <input type="button" value="Añadir item" class="input-aniadir" name="Aniadir">
+            <div class="div__datos-tratamiento">
+                <label for="Descripcion">Descripcion</label>
+                <input type="text" id="input-descripcion" class="input-aniadir" name="Descripcion" required>
+                <label for="presentacion">Presentacion</label>
+                <input type="text" id="input-presentacion" class="input-aniadir" name="presentacion" required>
+                <label for="cantidad">Cantidad</label>
+                <input type="text" id="input-cantidad" class="input-aniadir" name="cantidad" required>
+                <label for="duracionTratamiento">Duracion del tratamiento</label>
+                <input type="text" id="input-duracionTratamiento" class="input-aniadir" name="duracionTratamiento" required>
+                <label for="posologia">Posologia</label>
+                <input type="text" id="input-posologia" class="input-aniadir" name="posologia" required>
+                <label for="insertarItem"></label>
+                <input type="button" value="Insertar item" id="btnInsertarItem">
+            </div>
+        </div>
+    </section>
+    <template class="template-prescripcion">
+        <p id="descripcion"></p>
+        <p id="presentacion"></p>
+        <p id="cantidad"></p>
+        <p id="duracion"></p>
+        <p id="posologia"></p>
+    </template>
+    <footer>
+        EPS
+    </footer>
+    <script src="../JavaScript/logicaMedico.js"></script>
+</body>
+</html>

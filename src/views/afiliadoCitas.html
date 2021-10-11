@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2c76fa98f8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/afiliadoEstilo.css">
+    <title>Asignacion de citas WEB</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li ><a href="afiliadoSesion.html"><b id="nombreAfiliado">Nombre afiliado</b></a></li>
+                <li><a href="afiliadoInfo.html"><b>INFORMACION AFILIADO</b></a></li>
+                <li><a href="index.html"><b>CERRAR SESION</b></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <label for="tipoCita">Seleccione el tipo de cita:</label>
+        <select name="tipoCita" id="">
+            <option value="alergologia">Alergología</option>
+            <option value="anestesiologia">Anestesiología</option>
+            <option value="cardiologia">Cardiología</option>
+            <option value="cirugia">Cirugía</option>
+            <option value="dermatologia">Dermatología</option>
+            <option value="endocrinologia">Endocrinología</option>
+            <option value="general">Medicina General</option>
+            <option value="interna">Medicina interna</option>
+            <option value="neurologia">Neurología</option>
+            <option value="pediatria">Pediatría</option>
+            <option value="psicologia">Psicología</option>
+            <option value="psiquiatria">Psiquiatría</option>
+        </select>
+        <h2>Citas disponibles</h2>
+        <div class="section__div-citas">
+            <p class="data">Agendar</p>
+            <p class="data">Fecha disponoble</p>
+            <p class="data">Nombre del médico</p>
+            <p class="data">Sede</p>
+            <p class="data">Dirección</p>
+        </div>
+    </section>
+    <template id="template-cita">
+        <a class="aCita" href=""><i class="fas fa-calendar-plus">Tomar cita</i></a>
+        <p id="fecha" class="templateCita"></p>
+        <p id="nombreMedico" class="templateCita"></p>
+        <p id="sede" class="templateCita"></p>
+        <p id="direccion" class="templateCita"></p>
+    </template>
+    <footer>
+        <p>EPS</p>
+    </footer>
+    <script src="../JavaScript/logicaAfiliado.js"></script>
+    <script src="../JavaScript/logicaAfiliadoInfo.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/afiliadoEstilo.css">
+    <title>Crear espacios nuevos</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li ><a href="medicoSesion.html"><b id="nombreMedico">Nombre médico</b></a></li>
+                <li><a href="index.html"><b>CERRAR SESION</b></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="section__div-crearEspacios-btn">
+            <input type="button" value="Crear espacios del mes" id="liberarEspacios">
+        </div>
+        <div class="section__div-crearEspacios">
+            <p>Fecha</p>
+            <p>Eliminar</p>
+        </div>
+    </section>
+    <template id="template-nuevoEspacio">
+        <p id="fecha"></p>
+        <input type="button" id="eliminarEspacio" value="Eliminar espacio">
+    </template>
+    <footer>
+        EPS
+    </footer>
+    <script src="../JavaScript/logicaMedico.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/normalize.css">
+    <link rel="stylesheet" href="/CSS/estilos.css">
+
+    <title>EPS</title>
+</head>
+<body>
+    <header>
+        <h1>Inicio de sesion</h1>
+    </header>
+    <section class="container__section">
+        <div class="container__div">
+            <figure class="container__div-figure">
+                <img src="/Imagenes/Salud.jpg" alt="Salud">
+            </figure>
+        </div>
+        <form action="afiliadoSesion.html" method="POST" class="container__form">
+            <div class="container__form-div">
+                <label for="tipoDocumento">Seleccione tipo de documento</label>
+                <select name="tipoDocumento" class="container__form-div-input" id="tipo">
+                    <option value="CC" name="tipoDoc" class="opt">Cedula de ciudadania</option>
+                    <option value="TI"  name="tipoDoc"class="opt">Tarjeta de identidad</option>
+                    <option value="CE" name="tipoDoc" class="opt">Cedula de extrangeria</option>
+                </select>
+            </div>
+            <div class="container__form-div">
+                <label for="cedula">Ingrese su documento</label>
+                <input type="text" id="cedula" name="numdoc" class="container__form-div-input" placeholder="EJEMPLO:10136808788" >
+            </div>
+            <div class="container__form-div">
+                <label for="contraseña">Ingrese su contraseña</label>
+                <input type="password" id="contraseña" name="contraseña" class="container__form-div-input" >
+            </div>
+            <div class="container__form-div">
+                <label for="enviar"></label>
+                <input type="submit" value="Iniciar sesión" class="container__form-div-input enviar">
+            </div>
+        </form>
+
+    </section>
+    <footer>
+        EPS
+    </footer>
+    <!-- <script src="/JavaScript/logicaIndex.js"></script> -->
+</body>
+</html>

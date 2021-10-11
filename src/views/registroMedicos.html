@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/afiliadoEstiloSesion.css">
+    <title>Registro de médicos</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="admin.html">INICIO</a></li>
+        </ul>
+    </header>
+    <section class="contenedor__seccion">
+        <h2>Registro de médicos</h2>
+        <form action="#" class="contenedor__seccion-formulario">
+            <h3>Datos basicos:</h3>
+            <label for="" class="contenedor__seccion-formulario-label">Tipo de documento:</label>
+            <select name="tipoDoc" class="contenedor__seccion-formulario-input">
+                <option value="cedula de ciudadania">Cedula de ciudadania</option>
+                <option value="tarjeta de identidad">Tarjeta de identidad</option>
+                <option value="cedula de extranjeria">Cedula de extranjeria</option>
+            </select>
+            <br>
+            <label for="" class="contenedor__seccion-formulario-label">Numero de identificacion:</label>
+            <input type="text" class="contenedor__seccion-formulario-input" required placeholder="1013680879">
+            <br>
+            <label for="" class="contenedor__seccion-formulario-label">Nombre completo:</label>
+            <input type="text" class="contenedor__seccion-formulario-input" required placeholder="jeasson suarez">
+            <br>
+            <label for="" class="contenedor__seccion-formulario-label">Fecha de nacimiento:</label>
+            <input type="date" class="contenedor__seccion-formulario-input" required>
+            <br>
+            <label for="" class="contenedor__seccion-formulario-label">Sexo:</label>
+            <select name="sexo">
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>pt
+            </select>
+            <br>
+            <label for="" class="contenedor__seccion-formulario-label">Telefono de contacto:</label>
+            <input type="text" class="contenedor__seccion-formulario-input">
+            <br>
+            <label for="" class="contenedor__seccion-formulario-label">Correo electronico</label>
+            <input type="mail" class="contenedor__seccion-formulario-input">
+            <br>
+            <br>
+            <h3>Datos profesionales:</h3>
+            <label for="especializacion">Seleccionar especializacion:</label>
+            <select name="especializacion">
+                <option value="medico general">Medico general</option>
+                <option value="medico urologo">Urologo</option>
+                <option value="ginecologo">Ginecologo</option>
+                <option value="ortopedista">Ortopedista</option>
+                <option value="otorrino">Otorrinolaringologo</option>
+                <option value="psicologia">Psicologo</option>
+                <option value="psiquiatra">Psiquiatra</option>
+            </select>
+            <br>
+            <label for="sedeNombre">Asignar sede:</label>
+            <select name="sedeAsignada">
+                <option value="1">bogota</option>
+                <option value="2">medellin</option>
+                <option value="3">cali</option>
+            </select>
+            <br>
+            <label for="direccion">Direccion sede:</label>
+            <input type="text">
+            <br>
+            <label for="telefonoSede">Telefono de la sede:</label>
+            <input type="text">
+            <br>
+            <label for="consultorio">Consultorio</label>
+            <input type="text">
+            <br>
+            <label for="Registrar"></label>
+            <input type="submit" value="Registrar">
+        </form>
+    </section>
+    <footer>
+        <p>EPS registro medicos</p>
+    </footer>
+</body>
+</html>

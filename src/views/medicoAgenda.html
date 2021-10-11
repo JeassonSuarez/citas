@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/afiliadoEstilo.css">
+    <title>Consulta de citas solicitadas</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li ><a href="medicoSesion.html"><b id="nombreMedico">Nombre medico</b></a></li>
+                <li><a href="medicoInfo.html"><b>INFORMACION MEDICO</b></a></li>
+                <li><a href="index.html"><b>CERRAR SESION</b></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Citas solicitadas</h2>
+        <div class="section__div-agenda">
+            <p class="data">Tipo de cita</p>
+            <p class="data">Fecha</p>
+            <p class="data">Nombre del afiliado</p>
+            <p class="data">Sede</p>
+            <p class="data">Consultorio</p>
+            <p class="data">Dirección</p>
+            <p class="data">Inicio cita</p>
+            <p class="data">Cancelacion</p>
+        </div>
+        <div class="section__div-btn-liberar-espacio">
+            <a href="medicoLiberarAgenda.html" id="liberarEspacios"><b>Generar nuevos espacios</b></a>
+        </div>
+    </section>
+    <template id="template-agenda">
+        <p id="tipoCita" class="template-agenda"></p>
+        <p id="fecha" class="template-agenda"></p>
+        <p id="nombreAfiliado" class="template-agenda"></p>
+        <p id="sede" class="template-agenda"></p>
+        <p id="consultorio" class="template-agenda"></p>
+        <p id="direccion" class="template-agenda"></p>
+        
+
+
+        <!-- <p id="tipoCita"></p>
+        <p id="fecha"></p>
+        <p id="nombreAfiliado"></p>
+        <p id="sede"></p>
+        <p id="consultorio"></p>
+        <p id="direccion"></p> -->
+        <a href="medicoPrescripcion.html" id="iniciarCita">Iniciar cita</a>
+        <a id="cancelarCita" href="">Cancelar</a>
+        <!-- //<input type="button" id="iniciarCita" value="Iniciar cita"> -->
+        <!-- <input type="button" id="cancelarCita" value="Cancelar"> -->
+    </template>
+    <footer>
+        <p>EPS</p>
+    </footer>
+    <script src="../JavaScript/logicaMedico.js"></script>
+</body>
+</html>

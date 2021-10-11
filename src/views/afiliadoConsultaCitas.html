@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/afiliadoEstilo.css">
+    <title>Consulta de citas solicitadas</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li ><a href="afiliadoSesion.html"><b id="nombreAfiliado">Nombre afiliado</b></a></li>
+                <li><a href="afiliadoInfo.html"><b>INFORMACION AFILIADO</b></a></li>
+                <li><a href="index.html"><b>CERRAR SESION</b></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>CITAS SOLICITADAS</h2>
+        <div class="section__div-citasConsulta">
+            <p class="data">Tipo de cita</p>
+            <p class="data">Fecha disponoble</p>
+            <p class="data">Nombre del médico</p>
+            <p class="data">Sede</p>
+            <p class="data">Dirección</p>
+            <p class="data">Cancelacion</p>
+        </div>
+    </section>
+    <template id="template-citaConsulta">
+        <p id="tipoCita" class="templateCita"></p>
+        <p id="fecha" class="templateCita"></p>
+        <p id="nombreMedico" class="templateCita"></p>
+        <p id="sede" class="templateCita"></p>
+        <p id="direccion" class="templateCita"></p>
+        <a id="cancelarCita" href="">Cancelar</a>
+        <!-- <input type="button" id="cancelarCita" value="Cancelar"> -->
+    </template>
+    <footer>
+        <p>EPS</p>
+    </footer>
+    <script src="../JavaScript/logicaAfiliadoConsultaCitas.js"></script>
+    <script src="../JavaScript/logicaAfiliadoInfo.js"></script>
+</body>
+</html>
