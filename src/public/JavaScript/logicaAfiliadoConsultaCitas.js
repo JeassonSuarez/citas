@@ -31,7 +31,7 @@ citasObjetoConsulta.forEach(Element => {
     $templateCitaConsulta.getElementById("nombreMedico").textContent = Element.nombreMedico;
     $templateCitaConsulta.getElementById("sede").textContent = Element.sede;
     $templateCitaConsulta.getElementById("direccion").textContent = Element.direccion;
-    const $clone = document.importNode($templateCitaConsulta, true)         
+    const $clone = document.importNode($templateCitaConsulta, true)
     $fragmentoConsulta.appendChild($clone)
 });
 

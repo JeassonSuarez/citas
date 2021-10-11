@@ -12,7 +12,7 @@
     <header>
         <nav>
             <ul>
-                <li><b><%= (typeof nombre != "undefined" ? nombre : "") %></b></li>
+                <li><b><%= (typeof nombreCompleto != "undefined" ? nombreCompleto : "") %></b></li>
                 <li ><a href="afiliadoSesion.html"><b>INICIO</b></a></li>
                 <li><a href="index.html"><b>CERRAR SESION</b></a></li>
             </ul>
@@ -21,23 +21,31 @@
     <section class="section__container">
         <h2>DATOS PERSONALES</h2>
         <h3>NOMBRE</h3>
-        <p id="nombre"></p>
+        <p id="nombre"><%= (typeof nombre != "undefined" ? nombre : "") %></p>
+        <h3>APELLIDO</h3>
+        <p id="apellido"><%= (typeof apellido != "undefined" ? apellido : "") %></p>
         <h3>TIPO DE DOCUMENTO</h3>
-        <p id="tipoDoc"></p>
+        <p id="tipoDoc"><%= (typeof tipoDocAfiliado != "undefined" ? tipoDocAfiliado : "") %></p>
         <h3>NUMERO DE DOCUMENTO</h3>
-        <p id="numDoc"></p>
+        <p id="numDoc"><%= (typeof numDocAfiliado != "undefined" ? numDocAfiliado : "") %></p>
+        <h3>CORREO</h3>
+        <p id="correo"><%= (typeof correo != "undefined" ? correo : "") %></p>
+        <h3>TIPO AFILIACION</h3>
+        <p id="tipoA"><%= (typeof tipoAfiliacion != "undefined" ? tipoAfiliacion : "") %></p>
         <h3>FECHA DE NACIMIENTO</h3>
-        <p id="fechaNacimiento"></p>
+        <p id="fechaNacimiento"><%= (typeof fechaNacimiento != "undefined" ? fechaNacimiento : "") %></p>
         <h3>SEXO</h3>
-        <p id="sexo"></p>
+        <p id="sexo"><%= (typeof sexo != "undefined" ? sexo : "") %></p>
+        <h3>ESTADO</h3>
+        <p id="estado"><%= (typeof estadoAfiliado != "undefined" ? estadoAfiliado : "") %></p>
         <h3>TELEFONO DE CONTACTO</h3>
-        <p id="telefono"></p>
-        <h3>CORREO ELECTRONICO</h3>
-        <p id="correo"></p>
-        <h3>TIPO DE AFILIACION </h3>
-        <p id="tipoAfiliacion"></p>
+        <p id="telefono"><%= (typeof telefonos != "undefined" ? telefonos : "") %></p>
         <h3>CATEGORÍA</h3>
-        <p id="categoria"></p>
+        <p id="categoria"><%= (typeof categoriaAfiliado != "undefined" ? categoriaAfiliado : "") %></p>
+        <h3>TIPO DOCUMENTO RESPONSABLE</h3>
+        <p id="res"><%= (typeof tipoDocRes != "undefined" ? tipoDocRes : "") %></p>
+        <h3> NUMERO DOCUMENTO RESPONSABLE</h3>
+        <p id="res"><%= (typeof numDocRes != "undefined" ? numDocRes : "") %></p>
     </section>
     <footer>
         EPS

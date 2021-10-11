@@ -20,41 +20,42 @@
         </nav>
     </header>
     <section>
-        <label for="tipoCita">Seleccione el tipo de cita:</label>
-        <select name="tipoCita" id="">
-            <option value="alergologia">Alergología</option>
-            <option value="anestesiologia">Anestesiología</option>
-            <option value="cardiologia">Cardiología</option>
-            <option value="cirugia">Cirugía</option>
-            <option value="dermatologia">Dermatología</option>
-            <option value="endocrinologia">Endocrinología</option>
-            <option value="general">Medicina General</option>
-            <option value="interna">Medicina interna</option>
-            <option value="neurologia">Neurología</option>
-            <option value="pediatria">Pediatría</option>
-            <option value="psicologia">Psicología</option>
-            <option value="psiquiatria">Psiquiatría</option>
-        </select>
+        <form action="afiliadoCitas.html" method="post">
+            <label for="especialidad">Seleccione el tipo de cita:</label>
+            <select name="especialidad" id="">
+                <option value="Oftalmologia">Oftalmologia</option>
+                <option value="Odontologia">Odontologia</option>
+                <option value="Medicina General">Medicina General</option>
+                <option value="Pediatria">Pediatria</option>
+            </select>
+            <label for="tipoCita">Seleccione el tipo de cita:</label>
+            <select name="tipoCita" id="">
+                <option value="Prioritaria">Prioritaria</option>
+                <option value="Primera vez">Primera vez</option>
+                <option value="Lectura de examenes">Lectura de examenes</option>
+                <option value="Control">Control</option>
+            </select>
+            <label for="enviar"></label>
+            <input type="submit" value="Buscar Citas">
+        </form>
         <h2>Citas disponibles</h2>
         <div class="section__div-citas">
             <p class="data">Agendar</p>
-            <p class="data">Fecha disponoble</p>
+            <p class="data">Fecha disponible</p>
             <p class="data">Nombre del médico</p>
-            <p class="data">Sede</p>
+            <p class="data">Especialidad</p>
             <p class="data">Dirección</p>
+            <a class="aCita" href=""><i class="fas fa-calendar-plus">Tomar cita</i></a>
+            <p id="fecha" class="templateCita"><%= (typeof fecha != "undefined" ? fecha : "") %></p>
+            <p id="nombreMedico" class="templateCita"><%= (typeof nombreMedico != "undefined" ? nombreMedico : "") %></p>
+            <p id="sede" class="templateCita"><%= (typeof especialidad != "undefined" ? especialidad : "") %></p>
+            <p id="direccion" class="templateCita"><%= (typeof dir != "undefined" ? dir : "") %></p>
         </div>
     </section>
-    <template id="template-cita">
-        <a class="aCita" href=""><i class="fas fa-calendar-plus">Tomar cita</i></a>
-        <p id="fecha" class="templateCita"></p>
-        <p id="nombreMedico" class="templateCita"></p>
-        <p id="sede" class="templateCita"></p>
-        <p id="direccion" class="templateCita"></p>
-    </template>
     <footer>
         <p>EPS</p>
     </footer>
-    <script src="../JavaScript/logicaAfiliado.js"></script>
-    <script src="../JavaScript/logicaAfiliadoInfo.js"></script>
+    <!-- <script src="../JavaScript/logicaAfiliado.js"></script>
+    <script src="../JavaScript/logicaAfiliadoInfo.js"></script> -->
 </body>
 </html>
