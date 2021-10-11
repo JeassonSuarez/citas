@@ -13,7 +13,8 @@
     <header>
         <nav>
             <ul>
-                <li ><a href="afiliadoSesion.html"><b id="nombreAfiliado">Nombre afiliado</b></a></li>
+                <li ><b id="nombreAfiliado"><%= (typeof nombreAfiliado != "undefined" ? nombreAfiliado : "") %></b></li>
+                <li ><a href="afiliadoSesion.html"><b id="nombreAfiliado">INICIO</b></a></li>
                 <li><a href="afiliadoInfo.html"><b>INFORMACION AFILIADO</b></a></li>
                 <li><a href="index.html"><b>CERRAR SESION</b></a></li>
             </ul>
@@ -45,11 +46,15 @@
             <p class="data">Nombre del médico</p>
             <p class="data">Especialidad</p>
             <p class="data">Dirección</p>
-            <a class="aCita" href=""><i class="fas fa-calendar-plus">Tomar cita</i></a>
-            <p id="fecha" class="templateCita"><%= (typeof fecha != "undefined" ? fecha : "") %></p>
-            <p id="nombreMedico" class="templateCita"><%= (typeof nombreMedico != "undefined" ? nombreMedico : "") %></p>
-            <p id="sede" class="templateCita"><%= (typeof especialidad != "undefined" ? especialidad : "") %></p>
-            <p id="direccion" class="templateCita"><%= (typeof dir != "undefined" ? dir : "") %></p>
+            <% if (datos) {%>
+                <% for (let i = 0; i < datos.length; i++) {%>
+                    <a class="aCita" href="afiliadoCitas.html/<%= (typeof datos[i].n_especialidad != 'undefined' ? datos[i].n_especialidad : '') %>/<%= (typeof datos[i].k_idcita != 'undefined' ? datos[i].k_idcita : '') %>"><i class="fas fa-calendar-plus">Tomar cita</i></a>
+                    <p id="fecha" class="templateCita"><%= (typeof datos[i].f_horainicio != "undefined" ? datos[i].f_horainicio : "") %></p>
+                    <p id="nombreMedico" class="templateCita"><%= (typeof datos[i].n_nombre != "undefined" ? datos[i].n_nombre : "") %></p>
+                    <p id="sede" class="templateCita"><%= (typeof datos[i].n_especialidad != "undefined" ? datos[i].n_especialidad : "") %></p>
+                    <p id="direccion" class="templateCita"><%= (typeof datos[i].n_direccion != "undefined" ? datos[i].n_direccion : "") %></p>
+                <%}%>
+            <%}%>
         </div>
     </section>
     <footer>
