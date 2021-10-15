@@ -18,6 +18,50 @@ app.use(require('./routes/afiliadoDAO'));
 //archivos estaticos
 app.use(express.static(path.join(__dirname,'public')));
 
+//ejecutando el servidor
+app.listen(app.get('port'));
+console.log(`Servidor puerto ${app.get('port')}`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //conexion bbddd
 // const conexionBD = require('./database/bd');
 // const getUsers = async(req, res)=>{
@@ -64,6 +108,3 @@ app.use(express.static(path.join(__dirname,'public')));
 // })
 
 
-//ejecutando el servidor
-app.listen(app.get('port'));
-console.log(`Servidor puerto ${app.get('port')}`);

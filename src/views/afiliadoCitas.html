@@ -22,14 +22,14 @@
     </header>
     <section>
         <form action="afiliadoCitas.html" method="post">
-            <label for="especialidad">Seleccione el tipo de cita:</label>
+            <label for="especialidad">SELECCIONES ESPECIALIDAD DE LA CITA:</label>
             <select name="especialidad" id="">
                 <option value="Oftalmologia">Oftalmologia</option>
                 <option value="Odontologia">Odontologia</option>
                 <option value="Medicina General">Medicina General</option>
                 <option value="Pediatria">Pediatria</option>
             </select>
-            <label for="tipoCita">Seleccione el tipo de cita:</label>
+            <label for="tipoCita">SELECIONE EL TIPO DE CITA:</label>
             <select name="tipoCita" id="">
                 <option value="Prioritaria">Prioritaria</option>
                 <option value="Primera vez">Primera vez</option>
@@ -48,9 +48,14 @@
             <p class="data">Dirección</p>
             <% if (datos) {%>
                 <% for (let i = 0; i < datos.length; i++) {%>
-                    <a class="aCita" href="afiliadoCitas.html/<%= (typeof datos[i].n_especialidad != 'undefined' ? datos[i].n_especialidad : '') %>/<%= (typeof datos[i].k_idcita != 'undefined' ? datos[i].k_idcita : '') %>"><i class="fas fa-calendar-plus">Tomar cita</i></a>
+                    <form action="afiliadoConsultaCitas.html" method="post" id="formCitas">
+                        <label for="citaId"></label>
+                        <input type="hidden" name="citaId" value="<%=(typeof datos[i].k_idcita != 'undefined' ? datos[i].k_idcita : '')%>">
+                        <input type="hidden" name="especialidadCita" value="<%= (typeof datos[i].n_especialidad != 'undefined' ? datos[i].n_especialidad : '') %>">
+                        <i class="fas fa-calendar-plus"><input type="submit" value="TOMAR CITA" class="aCita"></i>
+                    </form>
                     <p id="fecha" class="templateCita"><%= (typeof datos[i].f_horainicio != "undefined" ? datos[i].f_horainicio : "") %></p>
-                    <p id="nombreMedico" class="templateCita"><%= (typeof datos[i].n_nombre != "undefined" ? datos[i].n_nombre : "") %></p>
+                    <p id="nombreMedico" class="templateCita"><%= (typeof datos[i].n_nombre != "undefined" ? datos[i].n_nombre : "") %> <%= ("   ") %> <%= (typeof datos[i].n_apellido != "undefined" ? datos[i].n_apellido : "") %></p>
                     <p id="sede" class="templateCita"><%= (typeof datos[i].n_especialidad != "undefined" ? datos[i].n_especialidad : "") %></p>
                     <p id="direccion" class="templateCita"><%= (typeof datos[i].n_direccion != "undefined" ? datos[i].n_direccion : "") %></p>
                 <%}%>

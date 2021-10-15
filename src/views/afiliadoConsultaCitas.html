@@ -28,17 +28,20 @@
             <p class="data">Especialidad</p>
             <p class="data">Dirección</p>
             <p class="data">Cancelacion</p>
+            <% if (citasA) {%>
+                <% for (let i = 0; i < citasA.length; i++) {%>
+                <p id="tipoCita" class="templateCita"> <%= (typeof citasA[i].n_nombrecita != "undefined" ? citasA[i].n_nombrecita : "") %> </p>
+                <p id="fecha" class="templateCita"> <%= (typeof citasA[i].f_horainicio != "undefined" ? citasA[i].f_horainicio : "") %> </p>
+                <p id="nombreMedico" class="templateCita"> <%= (typeof citasA[i].n_nombre != "undefined" ? citasA[i].n_nombre : "") %> <%= ("   ") %> <%= (typeof citasA[i].n_apellido != "undefined" ? citasA[i].n_apellido : "") %></p>
+                <p id="especialidad" class="templateCita"> <%= (typeof citasA[i].n_especialidad != "undefined" ? citasA[i].n_especialidad : "") %> </p>
+                <p id="direccion" class="templateCita"> <%= (typeof citasA[i].n_direccion != "undefined" ? citasA[i].n_direccion : "") %> </p>
+                <a id="cancelarCita" href="">Cancelar</a>
+                <!-- <input type="button" id="cancelarCita" value="Cancelar"> -->
+                <%}%>
+            <%}%>
         </div>
     </section>
-    <template id="template-citaConsulta">
-        <p id="tipoCita" class="templateCita"></p>
-        <p id="fecha" class="templateCita"></p>
-        <p id="nombreMedico" class="templateCita"></p>
-        <p id="sede" class="templateCita"></p>
-        <p id="direccion" class="templateCita"></p>
-        <a id="cancelarCita" href="">Cancelar</a>
-        <!-- <input type="button" id="cancelarCita" value="Cancelar"> -->
-    </template>
+    
     <footer>
         <p>EPS</p>
     </footer>
